@@ -7,45 +7,43 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* Ensure body at least takes full viewport height */
   margin: 0;
   padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport */
 }
+
+/* Rest of your existing CSS styles */
+
 
 h1 {
   font-size: 5rem;
   color: #DBEDF3;
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #DA0463;
-
+  margin-top: 20px; /* Add margin to top */
+  position: absolute; /* Position the h1 absolutely */
+  top: 20px; /* Align h1 20px from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
 }
 
 footer {
   color: #DBEDF3;
   font-family: sans-serif;
+  position: absolute; /* Position the footer absolutely */
+  bottom: 20px; /* Align footer 20px from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
 }
-.w{
-  background-image: url("images/crash.png");
+
+.set {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.a{
-  background-image: url("images/kick.png");
-}
-.s{
-  background-image: url("images/snare.png");
-}
-.d{
-  background-image: url("images/tom1.png");
-}
-.j{
-  background-image: url("images/tom2.png");
-}
-.k{
-  background-image: url("images/tom3.png");
-}
-.l{
-  background-image: url("images/tom4.png");
-}
+
 .drum {
   outline: none;
   border: 10px solid #404B69;
@@ -64,9 +62,28 @@ footer {
   background-color: white;
 }
 
-.pressed{
+.pressed {
   box-shadow: 0 3px 4px 0 #DBEDF3;
   opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* Decrease font size on smaller screens */
+    top: 10px; /* Adjust position for smaller screens */
+  }
+  
+  footer {
+    bottom: 10px; /* Adjust position for smaller screens */
+  }
+  
+  .set {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+  
+  .drum {
+    margin: 5px; /* Decrease button margin for smaller screens */
+  }
 }
 
 @media (max-width: 768px) {
